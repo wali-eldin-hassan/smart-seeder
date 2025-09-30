@@ -1,0 +1,19 @@
+{
+    "name": "wali/smart-seeder",
+    "description": "A PHP/Laravel package for generating fake localized data (Arabic names, Hijri dates, Saudi IBAN, etc.).",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Wali\\SmartSeeder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wali-Eldin",
+            "email": "walieldin833@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
