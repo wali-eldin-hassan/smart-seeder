@@ -21,7 +21,7 @@
         "rector/rector": "^2.1"
     },
     "require": {
-        "php": "^8.1"
+        "php": "^8.2"
     },
     "scripts": {
         "test": "phpunit",

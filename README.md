@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/wali-eldin-hassan/smart-seeder/workflows/CI/badge.svg)](https://github.com/wali-eldin-hassan/smart-seeder/actions)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![PHP Version](https://img.shields.io/badge/php-%5E8.1-blue.svg?style=flat-square)](https://php.net)
+[![PHP Version](https://img.shields.io/badge/php-%5E8.2-blue.svg?style=flat-square)](https://php.net)
 
 SmartSeeder is a lightweight PHP package designed to generate realistic, localized fake data for your applications. Perfect for testing, database seeding, or generating sample datasets with Arabic/Saudi-specific data.
 
@@ -156,7 +156,7 @@ composer test-coverage
 
 ## 📋 Requirements
 
-- PHP 8.0 or higher
+- PHP 8.2 or higher
 - Composer
 
 ## 🤝 Contributing
