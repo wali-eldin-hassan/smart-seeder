@@ -2,8 +2,11 @@
 
 namespace Wali\SmartSeeder;
 
-use Wali\SmartSeeder\Generators\NameGenerator;
 use Wali\SmartSeeder\Generators\DateGenerator;
+use Wali\SmartSeeder\Generators\IbanGenerator;
+use Wali\SmartSeeder\Generators\NameGenerator;
+use Wali\SmartSeeder\Generators\NationalIdGenerator;
+use Wali\SmartSeeder\Generators\PhoneGenerator;
 
 class SmartSeeder
 {
@@ -17,14 +20,23 @@ class SmartSeeder
         return NameGenerator::fullName($gender);
     }
 
-
     public static function hijriDate(): string
     {
         return DateGenerator::hijriDate();
     }
 
-    public static function gregorianDate(): string
+    public static function iban(): string
     {
-        return DateGenerator::gregorianDate();
+        return IbanGenerator::generate();
+    }
+
+    public static function phone(): string
+    {
+        return PhoneGenerator::generate();
+    }
+
+    public static function nationalId(): string
+    {
+        return NationalIdGenerator::generate();
     }
 }

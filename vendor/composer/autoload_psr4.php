@@ -7,4 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Wali\\SmartSeeder\\' => array($baseDir . '/src'),
+    'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'Database\\Seeders\\' => array($vendorDir . '/laravel/pint/database/seeders'),
+    'Database\\Factories\\' => array($vendorDir . '/laravel/pint/database/factories'),
+    'App\\' => array($vendorDir . '/laravel/pint/app'),
 );
