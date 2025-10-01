@@ -52,6 +52,5 @@ class SmartSeederTest extends TestCase
         $iqama = SmartSeeder::iqama();
         $this->assertEquals(10, strlen($iqama));
         $this->assertMatchesRegularExpression('/^2[0-9]{9}$/', $iqama);
-        $this->assertStringStartsWith('2', $iqama);
     }
 }
