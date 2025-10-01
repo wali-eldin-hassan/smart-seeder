@@ -16,6 +16,7 @@ class DateGenerator
         $year = rand(1400, 1450);
         $month = rand(1, 12);
         $day = rand(1, 29);
-        return sprintf("%04d-%02d-%02d", $year, $month, $day);
+
+        return sprintf('%04d-%02d-%02d', $year, $month, $day);
     }
 }

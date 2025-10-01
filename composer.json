@@ -11,9 +11,13 @@
     "authors": [
         {
             "name": "Wali-Eldin",
-            "email": "walieldin833@gmail.com"
+            "email": "creaspo6@gmail.com"
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^12.3",
+        "laravel/pint": "^1.25",
+        "rector/rector": "^2.1"
+    }
 }
