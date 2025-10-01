@@ -39,4 +39,9 @@ class SmartSeeder
     {
         return NationalIdGenerator::generate();
     }
+
+    public static function iqama(): string
+    {
+        return NationalIdGenerator::generateIqama();
+    }
 }
