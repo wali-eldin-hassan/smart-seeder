@@ -216,8 +216,7 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 ## 🙏 Acknowledgments
 
 - Inspired by the need for localized Arabic/Saudi fake data generation
-- Built with ❤️ for the Saudi developer community
 
 ---
 
-Made with ❤️ in Saudi Arabia 🇸🇦
+Made with ❤️
