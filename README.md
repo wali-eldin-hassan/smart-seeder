@@ -13,6 +13,7 @@ SmartSeeder is a lightweight PHP package designed to generate realistic, localiz
 - 🏦 **Saudi IBANs**: Generate valid-looking Saudi Arabian bank account numbers
 - 📱 **Saudi Mobile Numbers**: Generate realistic Saudi mobile phone numbers
 - 🆔 **Saudi National IDs**: Generate valid-format Saudi national identification numbers
+- 🏠 **Saudi Iqama Numbers**: Generate valid-format Saudi resident ID numbers (starting with 2)
 - ⚡ **Lightweight**: Minimal dependencies, fast performance
 - 🔧 **Easy Integration**: Works seamlessly with PHP and Laravel projects
 
@@ -50,6 +51,9 @@ echo SmartSeeder::phone(); // e.g., "+966501234567"
 
 // Generate a Saudi National ID
 echo SmartSeeder::nationalId(); // e.g., "1023456789"
+
+// Generate a Saudi Iqama (resident ID)
+echo SmartSeeder::iqama(); // e.g., "2087654321"
 ```
 
 ## 📖 Detailed Usage
@@ -100,9 +104,13 @@ Generate Saudi contact details:
 $phone = SmartSeeder::phone();
 // Returns: "+966" + 9 digits (e.g., "+966501234567")
 
-// Saudi National ID
+// Saudi National ID (citizens and residents)
 $nationalId = SmartSeeder::nationalId();
-// Returns: 10-digit number (e.g., "1023456789")
+// Returns: 10-digit number starting with 1 or 2 (e.g., "1023456789")
+
+// Saudi Iqama (resident ID) - specifically for non-citizens
+$iqama = SmartSeeder::iqama();
+// Returns: 10-digit number starting with 2 (e.g., "2087654321")
 ```
 
 ## 🧪 Laravel Integration
@@ -118,6 +126,7 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => SmartSeeder::fullName(),
         'phone' => SmartSeeder::phone(),
         'national_id' => SmartSeeder::nationalId(),
+        'iqama' => SmartSeeder::iqama(),
         'iban' => SmartSeeder::iban(),
         // ... other attributes
     ];
