@@ -19,5 +19,18 @@
         "phpunit/phpunit": "^12.3",
         "laravel/pint": "^1.25",
         "rector/rector": "^2.1"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage",
+        "format": "pint",
+        "format-test": "pint --test",
+        "refactor": "rector process",
+        "refactor-dry": "rector process --dry-run",
+        "ci": [
+            "@format-test",
+            "@test",
+            "@refactor-dry"
+        ]
     }
 }
