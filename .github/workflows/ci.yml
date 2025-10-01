@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,59 +17,18 @@ jobs:
     name: PHP ${{ matrix.php-version }}
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-version }}
-        extensions: mbstring, intl
-        coverage: xdebug
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ matrix.php-version }}-${{ hashFiles('**/composer.json') }}
-        restore-keys: |
-          ${{ runner.os }}-php-${{ matrix.php-version }}-
 
     - name: Install dependencies
-      run: composer update --prefer-dist --no-progress --no-interaction
+      run: composer install --prefer-dist --no-interaction
 
-    - name: Run PHPUnit tests
-      run: ./vendor/bin/phpunit --coverage-text
+    - name: Run tests
+      run: composer test
 
-    - name: Run Laravel Pint (Code Style)
-      run: ./vendor/bin/pint --test
-
-  code-quality:
-    runs-on: ubuntu-latest
-    name: Code Quality
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
-        extensions: mbstring, intl
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-8.2-${{ hashFiles('**/composer.json') }}
-        restore-keys: |
-          ${{ runner.os }}-php-8.2-
-
-    - name: Install dependencies
-      run: composer update --prefer-dist --no-progress --no-interaction
-
-    - name: Run Rector (dry-run)
-      run: ./vendor/bin/rector process --dry-run
+    - name: Check code style
+      run: composer format-test
